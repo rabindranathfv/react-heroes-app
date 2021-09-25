@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
 
 export default class Test extends Component {
+    goToInvoices = () => {
+        const { history } = this.props;
+        history.push("/invoices");
+    }
+
     render() {
         return (
-            'test component'
+            <p onClick={this.goToInvoices}>IR A INVOICES </p>
         )
     }
 }
