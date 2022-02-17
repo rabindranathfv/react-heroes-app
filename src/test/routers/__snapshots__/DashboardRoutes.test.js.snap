@@ -1339,7 +1339,7 @@ Array [
           className="col-5"
         >
           <h4>
-            Buscar
+            Search
           </h4>
           <hr />
           <form
@@ -1350,7 +1350,7 @@ Array [
               className="form-control"
               name="searchText"
               onChange={[Function]}
-              placeholder="Buscar un héroe"
+              placeholder="Search a heroe"
               type="text"
               value=""
             />
@@ -1358,21 +1358,23 @@ Array [
               className="btn btn-outline-primary mt-1"
               type="submit"
             >
-              Buscar...
+              Search...
             </button>
           </form>
         </div>
         <div
           className="col-7"
         >
-          <h4>
-            Resultados
+          <h4
+            id="results"
+          >
+            Results
           </h4>
           <hr />
           <div
             className="alert alert-info"
           >
-             Buscar un héroe 
+             Search a heroe 
           </div>
         </div>
       </div>,

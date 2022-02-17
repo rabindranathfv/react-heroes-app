@@ -37,13 +37,13 @@ export const SearchScreen = () => {
             <div className="row">
 
                 <div className="col-5">
-                    <h4>Buscar</h4>
+                    <h4>Search</h4>
                     <hr />
 
                     <form onSubmit={ handleSearch }>
                         <input 
                             type="text"
-                            placeholder="Buscar un héroe"
+                            placeholder="Search a heroe"
                             className="form-control"
                             name="searchText"
                             autoComplete="off"
@@ -55,7 +55,7 @@ export const SearchScreen = () => {
                         <button 
                             className="btn btn-outline-primary mt-1"
                             type="submit">
-                            Buscar...
+                            Search...
                         </button>
 
                     </form>
@@ -64,14 +64,14 @@ export const SearchScreen = () => {
                 </div>
 
                 <div className="col-7">
-                    <h4>Resultados</h4>
+                    <h4 id='results'>Results</h4>
                     <hr />
 
                     {
                         (q === '')
-                            ? <div className="alert alert-info"> Buscar un héroe </div>
+                            ? <div className="alert alert-info"> Search a heroe </div>
                             : ( heroesFileted.length === 0 ) 
-                                && <div className="alert alert-danger"> No hay resultados: { q } </div>
+                                && <div className="alert alert-danger"> there is no resutls: { q } </div>
                     }
 
 

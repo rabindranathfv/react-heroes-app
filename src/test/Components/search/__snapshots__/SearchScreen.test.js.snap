@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchScreen Should render batman after search this heroe 1`] = `
+Array [
+  <h1>
+    Searchs
+  </h1>,
+  <hr />,
+  <div
+    className="row"
+  >
+    <div
+      className="col-5"
+    >
+      <h4>
+        Search
+      </h4>
+      <hr />
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          autoComplete="off"
+          className="form-control"
+          name="searchText"
+          onChange={[Function]}
+          placeholder="Search a heroe"
+          type="text"
+          value="batman"
+        />
+        <button
+          className="btn btn-outline-primary mt-1"
+          type="submit"
+        >
+          Search...
+        </button>
+      </form>
+    </div>
+    <div
+      className="col-7"
+    >
+      <h4
+        id="results"
+      >
+        Results
+      </h4>
+      <hr />
+      <div
+        className="col animate__animated animate__fadeIn"
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="row no-gutters"
+          >
+            <div
+              className="col-4"
+            >
+              <img
+                alt="Batman"
+                className="card-img"
+                src="/assets/dc-batman.jpg"
+              />
+            </div>
+            <div
+              className="col-8"
+            >
+              <div
+                className="card-body"
+              >
+                <h5
+                  className="card-title"
+                >
+                  Batman
+                </h5>
+                <p
+                  className="card-text"
+                >
+                  Bruce Wayne
+                </p>
+                <p
+                  className="card-text"
+                >
+                  <small
+                    className="text-muted"
+                  >
+                    Detective Comics #27
+                  </small>
+                </p>
+                <a
+                  href="/hero/dc-batman"
+                  onClick={[Function]}
+                >
+                  Más...
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`SearchScreen Should render batmanFEAR after search this heroe 1`] = `
+Array [
+  <h1>
+    Searchs
+  </h1>,
+  <hr />,
+  <div
+    className="row"
+  >
+    <div
+      className="col-5"
+    >
+      <h4>
+        Search
+      </h4>
+      <hr />
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          autoComplete="off"
+          className="form-control"
+          name="searchText"
+          onChange={[Function]}
+          placeholder="Search a heroe"
+          type="text"
+          value="batmanFEAR"
+        />
+        <button
+          className="btn btn-outline-primary mt-1"
+          type="submit"
+        >
+          Search...
+        </button>
+      </form>
+    </div>
+    <div
+      className="col-7"
+    >
+      <h4
+        id="results"
+      >
+        Results
+      </h4>
+      <hr />
+      <div
+        className="alert alert-danger"
+      >
+         there is no resutls: 
+        batmanFEAR
+         
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`SearchScreen Should render search Screen with route as search and user authenticated 1`] = `
+Array [
+  <h1>
+    Searchs
+  </h1>,
+  <hr />,
+  <div
+    className="row"
+  >
+    <div
+      className="col-5"
+    >
+      <h4>
+        Search
+      </h4>
+      <hr />
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          autoComplete="off"
+          className="form-control"
+          name="searchText"
+          onChange={[Function]}
+          placeholder="Search a heroe"
+          type="text"
+          value=""
+        />
+        <button
+          className="btn btn-outline-primary mt-1"
+          type="submit"
+        >
+          Search...
+        </button>
+      </form>
+    </div>
+    <div
+      className="col-7"
+    >
+      <h4
+        id="results"
+      >
+        Results
+      </h4>
+      <hr />
+      <div
+        className="alert alert-info"
+      >
+         Search a heroe 
+      </div>
+    </div>
+  </div>,
+]
+`;
