@@ -31,7 +31,7 @@ export const SearchScreen = () => {
 
     return (
         <>
-            <h1>Búsquedas</h1>
+            <h1>Searchs</h1>
             <hr />
 
             <div className="row">

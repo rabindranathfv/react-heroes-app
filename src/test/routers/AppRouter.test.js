@@ -4,14 +4,6 @@ import { AuthContext } from '../../auth/authContext';
 
 describe('AppRouter:::', () => {
 
-    // beforeEach(() => {
-    //     wrapper = mount(
-    //         <AuthContext.Provider value={contextVal} > 
-    //             <AppRouter />
-    //         </AuthContext.Provider>
-    //         );
-    // });
-
     it('Should show login route if use is not authenticated', () => {
         const contextVal = {
             user: {
