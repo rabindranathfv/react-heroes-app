@@ -4,6 +4,14 @@ import { MemoryRouter } from 'react-router-dom';
 import { SearchScreen } from './../../../Components/search/SearchScreen';
 import { AuthContext } from './../../../auth/authContext';
 
+// !important when you are using jest.mock remenber use mock<FunctionName> for easily mock without break scope variables
+const mockNavigate = jest.fn();
+
+jest.mock('react-router-dom', () => ({
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: () => mockNavigate
+}));
+
 describe('SearchScreen', () => { 
 
     const contextVal = {
@@ -61,5 +69,29 @@ describe('SearchScreen', () => {
         expect(inputHeroe).toBe('batmanFEAR');
         expect(alert.text().trim()).toBe('there is no resutls: batmanFEAR');
     }); 
+
+    it('Should trigger submit form for redirection', () => {
+        const wrapper = mount(
+            <AuthContext.Provider value={contextVal} > 
+                <MemoryRouter initialEntries={ ['/search']}>
+                    <SearchScreen />
+                </MemoryRouter>
+            </AuthContext.Provider>   
+           );
+        
+        wrapper.find('input').simulate('change', {
+            target: {
+                name: 'searchText',
+                value: 'batman'
+            }
+        });
+
+        wrapper.find('form').prop('onSubmit')({
+            preventDefault: () => ({})
+        })
+
+        expect(mockNavigate).toHaveBeenCalled();
+        expect(mockNavigate).toHaveBeenCalledWith('?q=batman');
+    });
 
 });

@@ -48,7 +48,6 @@ describe('DashboardRoutes', () => {
          </AuthContext.Provider>   
         );
     
-        console.log(wrapper.debug())
         expect(wrapper).toMatchSnapshot();
         expect(wrapper.find('h1').text().trim()).toBe('Searchs');
     });
