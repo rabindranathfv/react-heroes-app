@@ -1,5 +1,5 @@
 import { mount } from 'enzyme';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
 
 import { AuthContext } from './../../../auth/authContext';
 import { Navbar } from './../../../Components/ui/Navbar';
@@ -19,14 +19,16 @@ describe('SearchScreen', () => {
             logged: true,
             name: 'rabindranath'
         },
-        dispatch: () => jest.fn()
+        dispatch: jest.fn()
     }
 
    it('Should render Navbar component with user authenticated', () => {
        const wrapper = mount(
         <AuthContext.Provider value={contextVal} > 
-            <MemoryRouter>
-                <Navbar />
+            <MemoryRouter initialEntries={['/']}>
+                <Routes>
+                    <Route path='/' element={ <Navbar />} />
+                </Routes>
             </MemoryRouter>
         </AuthContext.Provider>   
     );
@@ -38,9 +40,11 @@ describe('SearchScreen', () => {
    it('Should render Navbar Screen with user authenticated, logout btn and make logout successfuly', () => {
     const wrapper = mount(
      <AuthContext.Provider value={contextVal} > 
-         <MemoryRouter>
-             <Navbar />
-         </MemoryRouter>
+         <MemoryRouter initialEntries={['/']}>
+                <Routes>
+                    <Route path='/' element={ <Navbar />} />
+                </Routes>
+            </MemoryRouter>
      </AuthContext.Provider>   
     );
 
