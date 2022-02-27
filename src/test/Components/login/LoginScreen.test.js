@@ -49,18 +49,22 @@ describe('LoginScreen', () => {
         payload: { name: 'rabindranath'}
     });
     expect(mockNavigate).toHaveBeenCalled();
-    expect(mockNavigate).toHaveBeenCalledWith('/marvel', {'replace': true});
+    expect(mockNavigate).toHaveBeenCalledWith('/marvel', {replace: true});
   }); 
 
     it('Should render LoginScreen with user authenticated, login btn and make login successfuly and redirect to dc as saved in localStorage', () => {
     
         localStorage.setItem('lastPath', '/dc');
-        wrapper.find('button').prop('onClick')();
+        wrapper.find('button').simulate('click');
     
         expect(wrapper.find('button').text().trim()).toBe('Login');
         expect(contextVal.dispatch).toHaveBeenCalled();
+        expect(contextVal.dispatch).toHaveBeenCalledWith({
+            type: types.login,
+            payload: { name: 'rabindranath'}
+        });
         expect(mockNavigate).toHaveBeenCalled();
-        expect(mockNavigate).toHaveBeenCalledWith('/dc', {'replace': true});
+        expect(mockNavigate).toHaveBeenCalledWith('/dc', {replace: true});
     }); 
 
 });
