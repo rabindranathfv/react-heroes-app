@@ -10,8 +10,6 @@ export const HeroScreen = () => {
 
     const hero = useMemo( () => getHeroById(heroeId), [ heroeId ]);
     
-    
-
     const handleReturn = () => {
         navigate( -1 );
     }
