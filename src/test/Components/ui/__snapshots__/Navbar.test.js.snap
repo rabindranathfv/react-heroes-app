@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchScreen Should render Navbar component with user authenticated 1`] = `
+exports[`Navbar Should render Navbar component with user authenticated 1`] = `
 <nav
   className="navbar navbar-expand-sm navbar-dark bg-dark"
 >

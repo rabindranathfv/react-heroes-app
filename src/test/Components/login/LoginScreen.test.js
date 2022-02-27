@@ -2,7 +2,7 @@ import { mount } from 'enzyme';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 
 import { AuthContext } from './../../../auth/authContext';
-import { Navbar } from './../../../Components/ui/Navbar';
+import { LoginScreen } from './../../../Components/login/LoginScreen';
 
 // !important when you are using jest.mock remenber use mock<FunctionName> for easily mock without break scope variables
 const mockNavigate = jest.fn();
@@ -12,7 +12,7 @@ jest.mock('react-router-dom', () => ({
     useNavigate: () => mockNavigate
 }));
 
-describe('Navbar', () => { 
+describe('LoginScreen', () => { 
 
     const contextVal = {
         user: {
@@ -22,27 +22,27 @@ describe('Navbar', () => {
         dispatch: jest.fn()
     }
 
-   it('Should render Navbar component with user authenticated', () => {
+   it('Should render LoginScreen component with user authenticated', () => {
        const wrapper = mount(
         <AuthContext.Provider value={contextVal} > 
-            <MemoryRouter initialEntries={['/']}>
+            <MemoryRouter initialEntries={['/login']}>
                 <Routes>
-                    <Route path='/' element={ <Navbar />} />
+                    <Route path='/login' element={ <LoginScreen />} />
                 </Routes>
             </MemoryRouter>
         </AuthContext.Provider>   
     );
 
     expect(wrapper).toMatchSnapshot();
-    expect(wrapper.find('.text-info').text().trim()).toBe('rabindranath');
+    expect(wrapper.find('button').text().trim()).toBe('Login');
    }); 
 
-   it('Should render Navbar Screen with user authenticated, logout btn and make logout successfuly', () => {
+   it('Should render LoginScreen with user authenticated, login btn and make login successfuly and redirect to Marvel as based parameter', () => {
     const wrapper = mount(
      <AuthContext.Provider value={contextVal} > 
-         <MemoryRouter initialEntries={['/']}>
+         <MemoryRouter initialEntries={['/login']}>
                 <Routes>
-                    <Route path='/' element={ <Navbar />} />
+                    <Route path='/login' element={ <LoginScreen />} />
                 </Routes>
             </MemoryRouter>
      </AuthContext.Provider>   
@@ -50,10 +50,10 @@ describe('Navbar', () => {
 
     wrapper.find('button').prop('onClick')();
 
-    expect(wrapper.find('button').text().trim()).toBe('Logout');
+    expect(wrapper.find('button').text().trim()).toBe('Login');
     expect(contextVal.dispatch).toHaveBeenCalled();
     expect(mockNavigate).toHaveBeenCalled();
-    expect(mockNavigate).toHaveBeenCalledWith('/login', {'replace': true});
+    expect(mockNavigate).toHaveBeenCalledWith('/marvel', {'replace': true});
     }); 
 
 });
