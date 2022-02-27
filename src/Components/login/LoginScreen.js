@@ -12,14 +12,13 @@ export const LoginScreen = () => {
     const handleLogin = () => {
         const action = {
             type: types.login,
-            payload: { name: 'Fernando' }
+            payload: { name: 'rabindranath' }
         }
 
         dispatch(action);
 
         const lastPath = localStorage.getItem('lastPath') || '/marvel';
 
-        console.log(lastPath)
         navigate( lastPath, {
             replace: true
         });
